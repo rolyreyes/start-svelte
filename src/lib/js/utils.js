@@ -56,13 +56,13 @@ export function normalizeUrl(string) {
 }
 
 const fedexPattern = new RegExp(
-  /(\b96\d{20}\b)|(\b\d{15}\b)|(\b\d{12}\b)|(\b((98\d\d\d\d\d?\d\d\d\d|98\d\d) ?\d\d\d\d ?\d\d\d\d( ?\d\d\d)?)\b)|(^[0-9]{15}$)/,
+  /^([0-9]{12}|100\d{31}|\d{15}|\d{18}|96\d{20}|96\d{32})$/,
 );
 const upsPattern = new RegExp(
-  /\b(1Z ?[0-9A-Z]{3} ?[0-9A-Z]{3} ?[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]|[\dT]\d\d\d ?\d\d\d\d ?\d\d\d)\b/i,
+  /^1Z[A-Z0-9]{16}$/,
 );
 const uspsPattern = new RegExp(
-  /((\b\d{30}\b)|(\b91\d+\b)|(\b\d{20}\b))|(^E\D{1}\d{9}\D{2}$|^9\d{15,21}$)|(^91[0-9]+$)|(^[A-Za-z]{2}[0-9]+US$)/,
+  /^([A-Z]{2}\d{9}[A-Z]{2}|(420\d{9}(9[2345])?)?\d{20}|(420\d{5})?(9[12345])?(\d{24}|\d{20})|82\d{8})$/,
 );
 
 export function isTracking(string) {

@@ -1,4 +1,4 @@
-import "normalize.css";
+import "./reset.css";
 import './app.css'
 import "./assets/font/iosevka-aile.css";
 import App from './App.svelte'

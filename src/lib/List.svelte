@@ -41,9 +41,11 @@
   /* ul {
     padding-left: 1.6rem;
   } */
+
   details {
     user-select: none;
   }
+
   details summary {
     list-style: none;
     outline: none;
@@ -51,7 +53,8 @@
     font-weight: var(--normal);
     cursor: pointer;
   }
-  /* details summary::-webkit-details-marker {
+
+  details summary::-webkit-details-marker {
     display: none;
-  } */
+  }
 </style>

@@ -24,11 +24,6 @@ export function normalizeUrl(string) {
 
   const urlObject = new URL(string);
 
-  // Decode URI octets
-  if (urlObject.pathname) {
-    urlObject.pathname = decodeURI(urlObject.pathname);
-  }
-
   if (urlObject.hostname) {
     // Remove `www.`
     if (urlObject.hostname.startsWith("www.")) {
@@ -44,7 +39,12 @@ export function normalizeUrl(string) {
     }
   }
 
-  // Take advantage of many of the Node `url` normalizations
+  // Decode URI octets
+  if (urlObject.pathname) {
+    urlObject.pathname = decodeURI(urlObject.pathname);
+  }
+
+  // Take advantage of `url` normalizations
   string = urlObject.toString();
 
   // Remove trailing slash if found

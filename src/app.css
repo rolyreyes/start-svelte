@@ -28,13 +28,8 @@
   background: var(--background);
 }
 
-* {
-  box-sizing: border-box;
-}
-
 html {
   font-size: 22px;
-  /* overflow-x: hidden; */
   scrollbar-width: none;
 }
 
@@ -56,7 +51,7 @@ body {
   color: var(--foreground);
   font-family: var(--font);
   font-weight: var(--light);
-  padding-top: 2vh;
+  padding-top: 5vh;
 }
 
 strong {
@@ -67,7 +62,7 @@ a {
   color: var(--foreground);
   font-family: var(--font);
   outline: none;
-  padding: 0 6px;
+  padding: 0 8px;
   text-decoration: none;
 }
 

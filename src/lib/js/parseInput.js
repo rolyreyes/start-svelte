@@ -103,11 +103,6 @@ export default function parseInput(string) {
     const path = string.split("/").slice(1).join("/");
     let site = findSiteByAlias(alias).url;
 
-    // // detect and remove trailing slash if found
-    // if (site.endsWith("/")) {
-    //   site = site.slice(0, -1);
-    // }
-
     return site + "/" + path;
   }
 
@@ -116,6 +111,7 @@ export default function parseInput(string) {
     return getTracking(input);
   }
 
+  // handle url
   if (isUrl(string)) {
     return string;
   }

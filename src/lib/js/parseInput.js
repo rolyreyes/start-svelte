@@ -1,9 +1,9 @@
 import { get } from "svelte/store";
-import { config, db } from "stores.js";
+import { db } from "stores.js";
 import { getTracking, isTracking, isUrl, normalizeUrl } from "./utils.js";
 
-// const { sites } = get(config);
-const getDb = get(db);
+const findSiteByAlias = (string) =>
+  get(db).find((site) => site.alias === string);
 
 const aliasArray = get(db).map((site) => site.alias);
 const aliasDupes = aliasArray.filter((item, index) =>
@@ -13,9 +13,6 @@ const aliasDupes = aliasArray.filter((item, index) =>
 if (aliasDupes.length > 0) {
   console.log("DUPLICATE ALIASES FOUND IN CONFIG:", aliasDupes);
 }
-
-const findSiteByAlias = (string) =>
-  get(db).find((site) => site.alias === string);
 
 export default function parseInput(string) {
   const input = string.toLowerCase();
@@ -106,10 +103,10 @@ export default function parseInput(string) {
     const path = string.split("/").slice(1).join("/");
     let site = findSiteByAlias(alias).url;
 
-    // detect and remove trailing slash if found
-    if (site.endsWith("/")) {
-      site = site.slice(0, -1);
-    }
+    // // detect and remove trailing slash if found
+    // if (site.endsWith("/")) {
+    //   site = site.slice(0, -1);
+    // }
 
     return site + "/" + path;
   }

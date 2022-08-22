@@ -9,16 +9,6 @@ const ipPattern = new RegExp(
 const urlPattern = new RegExp(
   /^((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/.+)?)$/i,
 );
-const fedexPattern = new RegExp(
-  /(\b96\d{20}\b)|(\b\d{15}\b)|(\b\d{12}\b)|(\b((98\d\d\d\d\d?\d\d\d\d|98\d\d) ?\d\d\d\d ?\d\d\d\d( ?\d\d\d)?)\b)|(^[0-9]{15}$)/,
-);
-const upsPattern = new RegExp(
-  /\b(1Z ?[0-9A-Z]{3} ?[0-9A-Z]{3} ?[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]|[\dT]\d\d\d ?\d\d\d\d ?\d\d\d)\b/i,
-);
-const uspsPattern = new RegExp(
-  /((\b\d{30}\b)|(\b91\d+\b)|(\b\d{20}\b))|(^E\D{1}\d{9}\D{2}$|^9\d{15,21}$)|(^91[0-9]+$)|(^[A-Za-z]{2}[0-9]+US$)/,
-);
-
 export function isUrl(string) {
   if (ipPattern.test(string) || urlPattern.test(string)) {
     return true;
@@ -28,38 +18,51 @@ export function isUrl(string) {
 }
 
 export function normalizeUrl(string) {
-  if (ipPattern.test(string) || urlPattern.test(string)) {
-    if (
-      string.startsWith("dev") ||
-      string.startsWith("local") && !rawstring.includes(" ")
-    ) {
-      string = string.replace(
-        /^(local|dev)(\/(.+)?|:\d+)?$/g,
-        "localhost$2",
-      );
+  string = string.trim();
+  string = string.includes("://") ? string : `http://${string}`;
+
+  const urlObject = new URL(string);
+
+  // Decode URI octets
+  if (urlObject.pathname) {
+    urlObject.pathname = decodeURI(urlObject.pathname);
+  }
+
+  if (urlObject.hostname) {
+    // Remove `www.`
+    if (urlObject.hostname.startsWith("www.")) {
+      urlObject.hostname = urlObject.hostname.replace(/^www\./, "");
     }
 
-    string = string.startsWith("http") ? string : "http://" + string;
-    return string;
-  }
-}
-
-export function getUrl(string) {
-  if (ipPattern.test(string) || urlPattern.test(string)) {
-    if (
-      string.startsWith("dev") ||
-      string.startsWith("local") && !rawstring.includes(" ")
-    ) {
-      string = string.replace(
-        /^(local|dev)(\/(.+)?|:\d+)?$/g,
-        "localhost$2",
+    // Redirect "dev" and "local" to "localhost"
+    if (["dev", "local"].includes(urlObject.hostname)) {
+      urlObject.hostname = urlObject.hostname.replace(
+        /dev|local/gi,
+        "localhost",
       );
     }
-
-    string = string.startsWith("http") ? string : "http://" + string;
-    return string;
   }
+
+  // Take advantage of many of the Node `url` normalizations
+  string = urlObject.toString();
+
+  // Remove trailing slash if found
+  if (string.endsWith("/")) {
+    string = string.replace(/\/+$/, "");
+  }
+
+  return string;
 }
+
+const fedexPattern = new RegExp(
+  /(\b96\d{20}\b)|(\b\d{15}\b)|(\b\d{12}\b)|(\b((98\d\d\d\d\d?\d\d\d\d|98\d\d) ?\d\d\d\d ?\d\d\d\d( ?\d\d\d)?)\b)|(^[0-9]{15}$)/,
+);
+const upsPattern = new RegExp(
+  /\b(1Z ?[0-9A-Z]{3} ?[0-9A-Z]{3} ?[0-9A-Z]{2} ?[0-9A-Z]{4} ?[0-9A-Z]{3} ?[0-9A-Z]|[\dT]\d\d\d ?\d\d\d\d ?\d\d\d)\b/i,
+);
+const uspsPattern = new RegExp(
+  /((\b\d{30}\b)|(\b91\d+\b)|(\b\d{20}\b))|(^E\D{1}\d{9}\D{2}$|^9\d{15,21}$)|(^91[0-9]+$)|(^[A-Za-z]{2}[0-9]+US$)/,
+);
 
 export function isTracking(string) {
   if (

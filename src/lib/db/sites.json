@@ -18,7 +18,7 @@
     "name": "1337x",
     "alias": "1337",
     "url": "https://1377x.to",
-    "search_url": "https://1377x.to/sort-search/{}/seeders/desc/1/"
+    "search_url": "https://1377x.to/sort-search/{}/seeders/desc/1"
   },
   {
     "name": "1Password",
@@ -177,7 +177,7 @@
     "name": "Letterboxd",
     "alias": "lb",
     "url": "https://letterboxd.com/films/popular/this/week/size/large",
-    "search_url": "https://letterboxd.com/search/films/{}/",
+    "search_url": "https://letterboxd.com/search/films/{}",
     "category": "📼 Media"
   },
   {
@@ -306,7 +306,7 @@
   {
     "name": "Twitch",
     "alias": "ttv",
-    "url": "https://twitch.tv/",
+    "url": "https://twitch.tv",
     "category": "📼 Media"
   },
   {

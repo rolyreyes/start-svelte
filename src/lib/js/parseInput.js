@@ -114,13 +114,13 @@ export default function parseInput(string) {
     return site + "/" + path;
   }
 
-  if (isUrl(input)) {
-    return normalizeUrl(input);
-  }
-
   // handle tracking numbers
   if (isTracking(input)) {
     return getTracking(input);
+  }
+
+  if (isUrl(string)) {
+    return normalizeUrl(string);
   }
 
   // send query to search engine

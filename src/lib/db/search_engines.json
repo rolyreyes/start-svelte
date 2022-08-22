@@ -1,0 +1,10 @@
+[
+  {
+    "name": "DuckDuckGo",
+    "search": "https://duckduckgo.com/?q={}"
+  },
+  {
+    "name": "Google",
+    "search": "https://google.com/search?q={}"
+  }
+]

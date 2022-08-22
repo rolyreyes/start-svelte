@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Homebridge",
+    "alias": "hb",
+    "url": "http://jet.lan:8581",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Pi-hole",
+    "alias": "dns",
+    "url": "http://pi.hole/admin",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Plex",
+    "alias": "plex",
+    "url": "http://10.0.1.2:32400",
+    "search_url": "http://10.0.1.2:32400/web/index.html#!/search?query={}",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Radarr",
+    "alias": "m",
+    "url": "http://radarr.lan",
+    "search_url": "http://radarr.lan/add/new?term={}",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Radarr 4K",
+    "alias": "m4k",
+    "url": "http://radarr4k.lan",
+    "search_url": "http://radarr4k.lan/add/new?term={}",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Sonarr",
+    "alias": "tv",
+    "url": "http://sonarr.lan",
+    "search_url": "http://sonarr.lan/add/new?term={}",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Sonarr 4K",
+    "alias": "tv4k",
+    "url": "http://sonarr4k.lan",
+    "search_url": "http://sonarr4k.lan/add/new?term={}",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "Transmission",
+    "alias": "bt",
+    "url": "http://bt.lan",
+    "category": "👨🏽‍💻 Server"
+  },
+  {
+    "name": "UniFi",
+    "alias": "unifi",
+    "url": "http://jet.lan:8080",
+    "category": "👨🏽‍💻 Server"
+  }
+]

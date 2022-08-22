@@ -14,7 +14,7 @@
   {
     "name": "Plex",
     "alias": "plex",
-    "url": "http://10.0.1.2:32400",
+    "url": "http://10.0.1.2:32400/web",
     "search_url": "http://10.0.1.2:32400/web/index.html#!/search?query={}",
     "category": "👨🏽‍💻 Server"
   },

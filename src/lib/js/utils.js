@@ -9,6 +9,7 @@ const ipPattern = new RegExp(
 const urlPattern = new RegExp(
   /^((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/.+)?)$/i,
 );
+
 export function isUrl(string) {
   if (ipPattern.test(string) || urlPattern.test(string)) {
     return true;

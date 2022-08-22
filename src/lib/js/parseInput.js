@@ -1,6 +1,6 @@
 import { get } from "svelte/store";
 import { db } from "stores.js";
-import { getTracking, isTracking, isUrl, normalizeUrl } from "./utils.js";
+import { getTracking, isTracking, isUrl } from "./utils.js";
 
 const findSiteByAlias = (string) =>
   get(db).find((site) => site.alias === string);
@@ -117,7 +117,7 @@ export default function parseInput(string) {
   }
 
   if (isUrl(string)) {
-    return normalizeUrl(string);
+    return string;
   }
 
   // send query to search engine

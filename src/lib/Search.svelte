@@ -2,7 +2,7 @@
   import fetchJsonp from "fetch-jsonp";
   import { search, suggestions } from "stores.js";
   import { Prompt, Suggestions } from "$lib";
-  import {parseInput} from "$lib/js";
+  import { normalizeUrl, parseInput } from "$lib/js";
 
   async function getSuggestions(search) {
     const query = search.includes(":") ? search.split(":")[1] : search;
@@ -28,7 +28,7 @@
       autocorrect="off"
       spellcheck="false"
       on:submit|preventDefault={() =>
-        window.location.assign(parseInput($search))}
+        window.location.assign(normalizeUrl(parseInput($search)))}
     >
       <input
         bind:value={$search}

@@ -111,8 +111,12 @@ export default function parseInput(string) {
     return getTracking(input);
   }
 
-  // handle url
-  if (isUrl(string)) {
+//  handle localhost/ip/url with optional specified port
+//  Ex: apple.com
+//  Ex: 127.0.1.1/index.html
+//  Ex: localhost:5000
+//  Ex: local:1337 || dev:1337 => localhost: 1337
+if (isUrl(string)) {
     return string;
   }
 

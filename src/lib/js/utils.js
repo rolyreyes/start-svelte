@@ -1,8 +1,3 @@
-//  handle localhost/ip/url with optional specified port
-//  Ex: apple.com
-//  Ex: 127.0.1.1/index.html
-//  Ex: localhost:5000
-//  Ex: local:1337 || dev:1337 => localhost: 1337
 const ipPattern = new RegExp(
   /^(.*?:\/\/)?((dev|local|localhost)|((2(?!5?[6-9])|1|(?!0\d))\d\d?\.?\b){4})(:\d+)?(\/.*)?$/g,
 );
@@ -59,7 +54,7 @@ const fedexPattern = new RegExp(
   /^([0-9]{12}|100\d{31}|\d{15}|\d{18}|96\d{20}|96\d{32})$/,
 );
 const upsPattern = new RegExp(
-  /^1Z[A-Z0-9]{16}$/,
+  /(1Z?[\w]{3}?[\w]{3}?[\w]{2}?[\w]{4}?[\w]{3}?[\w]|[\dT]\d{3}?\d{3}?\d[3])/,
 );
 const uspsPattern = new RegExp(
   /^([A-Z]{2}\d{9}[A-Z]{2}|(420\d{9}(9[2345])?)?\d{20}|(420\d{5})?(9[12345])?(\d{24}|\d{20})|82\d{8})$/,

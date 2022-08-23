@@ -1,5 +1,4 @@
 import { readable, writable } from "svelte/store";
-import json from "$lib/config.json";
 
 const data = import.meta.glob("$lib/db/*.json", { eager: true });
 
@@ -10,7 +9,6 @@ Object.values(data).forEach((obj) => {
   );
 });
 
-export const config = readable(json);
 export const db = readable(combined);
 export let search = writable("");
 export let suggestions = writable([]);

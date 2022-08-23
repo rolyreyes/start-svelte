@@ -4,18 +4,18 @@
   import { Prompt, Suggestions } from "$lib";
   import { normalizeUrl, parseInput } from "$lib/js";
 
-  async function getSuggestions(search) {
-    const query = search.includes(":") ? search.split(":")[1] : search;
+  async function getSuggestions(string) {
+    const query = string.includes(":") ? string.split(":")[1] : string;
     //duckSuggestUrl = "https://duckduckgo.com/ac/?q=" + query + "&type=list", { jsonpCallbackFunction: "autocompleteCallback" }
     if (!query) {
       suggestions.set([]);
     } else {
       const response = await fetchJsonp(
         "https://google.com/complete/search?client=firefox&q=" + query
-      );
-      const searchSuggestions = await response.json();
-      suggestions.set(searchSuggestions[1].slice(0, 6));
-    }
+        );
+        const searchSuggestions = await response.json();
+        suggestions.set(searchSuggestions[1].slice(0, 5));
+      }
   }
 </script>
 
@@ -51,16 +51,13 @@
     border: none;
     outline: none;
     color: var(--white);
-    /* font-size: 1rem; */
     font-weight: var(--normal);
-    /* margin-left: -1px; */
-    /* width: 90%; */
   }
 
-  @supports (-webkit-touch-callout: none) {
+  /* @supports (-webkit-touch-callout: none) {
     /* CSS for iOS */
     /* input {
       margin-left: -10px;
-    } */
-  }
+    }
+  } */
 </style>

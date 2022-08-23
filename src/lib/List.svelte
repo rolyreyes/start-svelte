@@ -1,10 +1,9 @@
 <script>
   export let title = "💩 Example"; // String
   export let sites = [
-    // Array of objects
     {
       name: "Example Website",
-      aliases: ["Example", "aliases"],
+      alias: "example",
       url: "http://example.com/",
     },
   ];
@@ -20,7 +19,7 @@
         <li
           on:focus
           on:mouseover={(e) => e.target.focus()}
-          title={site.aliases.toString().replace(",", ", ")}
+          title={site.alias.toString().replace(",", ", ")}
         >
           <a href={site.url}>{site.name}</a>
         </li>

@@ -33,8 +33,9 @@
       <input
         bind:value={$search}
         on:input={getSuggestions($search)}
-        type="text"
         id="search-input"
+        label="search input"
+        type="text"
       />
     </form>
     <Suggestions />

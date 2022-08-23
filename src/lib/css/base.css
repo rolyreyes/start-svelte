@@ -1,0 +1,115 @@
+@import 'font/iosevka-aile.css';
+
+:root {
+    --background: rgb(18, 18, 20);
+    --foreground: #e5e4df;
+
+    --font: "Iosevka Aile", "SFMono-Regular", Consolas, Menlo, monospace;
+    --light: 200;
+    --normal: 400;
+    --heavy: 600;
+
+    --blue: #008afb;
+    --cyan: #8be9fd;
+    --green: #50fa7b;
+    --magenta: #5f4b8b;
+    --orange: #ff8906;
+    --red: #ff5555;
+    --white: #f8f8f2;
+    --yellow: #f1fa8c;
+
+    --brave: #fb542b;
+    --browser: #058ae6;
+    --chrome: #4185f4;
+    --chromium: #3982f8;
+    --firefox: #fa6d46;
+    --safari: #1e90e7;
+
+    --branch: 1px solid #75828a;
+
+    background: var(--background);
+  }
+
+  html {
+    font-size: 22px;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 32px;
+    }
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+
+    color: var(--foreground);
+    font-family: var(--font);
+    font-weight: var(--light);
+    padding-top: 5vh;
+  }
+
+  strong {
+    font-weight: var(--normal);
+  }
+
+  a {
+    color: var(--foreground);
+    font-family: var(--font);
+    outline: none;
+    padding: 0 8px;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: var(--background);
+    background: var(--green);
+    font-weight: var(--normal);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+
+  li {
+    max-width: 22ch;
+    position: relative;
+    word-wrap: normal;
+  }
+
+  li::before {
+    border-top: var(--branch);
+    top: 0.75rem;
+    width: 0.75rem;
+  }
+
+  li::after {
+    border-left: var(--branch);
+    height: 100%;
+    top: 0.25rem;
+  }
+
+  li::before,
+  li::after {
+    content: "";
+    left: -1rem;
+    position: absolute;
+  }
+
+  li:last-child::after {
+    height: 0.5rem;
+  }
+
+  aside {
+    margin-left: 1rem;
+  }

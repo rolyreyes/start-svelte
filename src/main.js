@@ -1,6 +1,7 @@
-import "./reset.css";
-import './app.css'
-import "./assets/font/iosevka-aile.css";
+// import "./reset.css";
+// import './app.css'
+// import "./assets/font/iosevka-aile.css";
+import "$lib/css/app.css"
 import App from './App.svelte'
 
 const app = new App({

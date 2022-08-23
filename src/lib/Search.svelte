@@ -33,8 +33,8 @@
       <input
         bind:value={$search}
         on:input={getSuggestions($search)}
+        aria-label="search"
         id="search-input"
-        label="search input"
         type="text"
       />
     </form>

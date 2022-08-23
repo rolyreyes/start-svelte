@@ -2,7 +2,7 @@
   font-family: "Iosevka Aile";
   font-weight: 100;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile Thin"),
     url("iosevka-aile-thin.subset.woff2") format("woff2");
 }
@@ -11,7 +11,7 @@
   font-family: "Iosevka Aile";
   font-weight: 200;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile ExtraLight"),
     url("iosevka-aile-extralight.subset.woff2") format("woff2");
 }
@@ -20,7 +20,7 @@
   font-family: "Iosevka Aile";
   font-weight: 300;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile Light"),
     url("iosevka-aile-light.subset.woff2") format("woff2");
 }
@@ -29,7 +29,7 @@
   font-family: "Iosevka Aile";
   font-weight: 400;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile"),
     url("iosevka-aile-regular.subset.woff2") format("woff2");
 }
@@ -38,7 +38,7 @@
   font-family: "Iosevka Aile";
   font-weight: 500;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile Medium"),
     url("iosevka-aile-medium.subset.woff2") format("woff2");
 }
@@ -47,7 +47,7 @@
   font-family: "Iosevka Aile";
   font-weight: 600;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile SemiBold"),
     url("iosevka-aile-semibold.subset.woff2") format("woff2");
 }
@@ -56,7 +56,7 @@
   font-family: "Iosevka Aile";
   font-weight: 700;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile Bold"),
     url("iosevka-aile-bold.subset.woff2") format("woff2");
 }
@@ -65,7 +65,7 @@
   font-family: "Iosevka Aile";
   font-weight: 800;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile ExtraBold"),
     url("iosevka-aile-extrabold.subset.woff2") format("woff2");
 }
@@ -74,7 +74,7 @@
   font-family: "Iosevka Aile";
   font-weight: 900;
   font-style: normal;
-  font-display: block;
+  font-display: auto;
   src: local("Iosevka Aile Heavy"),
     url("iosevka-aile-heavy.subset.woff2") format("woff2");
 }

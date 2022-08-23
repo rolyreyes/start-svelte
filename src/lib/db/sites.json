@@ -317,6 +317,11 @@
     "category": "💬 Socials"
   },
   {
+    "name": "Vercel",
+    "alias": "vercel",
+    "url": "https://vercel.com/"
+  },
+  {
     "name": "VSCode",
     "alias": "code",
     "url": "https://vscode.dev"

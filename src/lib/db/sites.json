@@ -243,7 +243,7 @@
   },
   {
     "name": "Plex.tv",
-    "alias": "plexr",
+    "alias": "plextv",
     "url": "https://app.plex.tv/desktop",
     "search_url": "https://desktop#!/search?query={}",
     "category": "📼 Media"

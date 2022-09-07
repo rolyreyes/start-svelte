@@ -305,16 +305,9 @@
   },
   {
     "name": "Twitch",
-    "alias": "ttv",
+    "alias": "t",
     "url": "https://twitch.tv",
     "category": "📼 Media"
-  },
-  {
-    "name": "Twitter",
-    "alias": "t",
-    "url": "https://twitter.com",
-    "search_url": "https://twitter.com/search?q={}",
-    "category": "💬 Socials"
   },
   {
     "name": "Vercel",

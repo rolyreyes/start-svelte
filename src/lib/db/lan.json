@@ -6,9 +6,9 @@
     "category": "👨🏽‍💻 Server"
   },
   {
-    "name": "Pi-hole",
+    "name": "Adguard",
     "alias": "dns",
-    "url": "http://pi.hole/admin",
+    "url": "http://10.0.1.2:81",
     "category": "👨🏽‍💻 Server"
   },
   {
